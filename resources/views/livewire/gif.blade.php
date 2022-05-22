@@ -6,7 +6,7 @@
                 <div class="flex flex-col">
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <div class="ml-2 mr-2 shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                 <div class="sm:flex block items-center justify-end mt-4">
                                     <x-jet-button @click="gifmodal = !gifmodal" class="ml-4">
                                         {{ __('Add New') }}
@@ -66,29 +66,9 @@
 
     {{-- modal --}}
     <div x-show="gifmodal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <!--
-          Background backdrop, show/hide based on modal state.
-
-          Entering: "ease-out duration-300"
-            From: "opacity-0"
-            To: "opacity-100"
-          Leaving: "ease-in duration-200"
-            From: "opacity-100"
-            To: "opacity-0"
-        -->
         <div class="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity"></div>
 
         <div class="fixed z-10 inset-0 overflow-y-auto">
-            <!--
-              Modal panel, show/hide based on modal state.
-
-              Entering: "ease-out duration-300"
-                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                To: "opacity-100 translate-y-0 sm:scale-100"
-              Leaving: "ease-in duration-200"
-                From: "opacity-100 translate-y-0 sm:scale-100"
-                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            -->
             {{-- content start--}}
                         <div class="sm:flex block items-center justify-end mt-4">
                             <x-jet-button @click="gifmodal = !gifmodal" class="fixed ml-4">
@@ -101,7 +81,7 @@
                         <div class="flex flex-col">
                             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div class="divide-y py-2 align-middle inline-block min-w-full px-4 sm:px-6 lg:px-8">
-                                    <form>
+                                    <form class="px-4 overflow-hidden sm:rounded-lg">
                                         @csrf
 
                                         <div class="mt-4 sm:flex block justify-between gap-4">
@@ -1568,7 +1548,7 @@
                                         </div>
                                         <x-jet-section-border />
 
-                                        <div class="sm:flex block items-center justify-end mt-4">
+                                        <div class="sm:flex block items-center justify-end mb-4">
                                             <x-jet-button wire:click.prevent="store()" class="ml-4">
                                                 {{ __('Save') }}
                                             </x-jet-button>
